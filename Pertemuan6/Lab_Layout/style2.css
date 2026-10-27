@@ -1,0 +1,460 @@
+/* ===== Eat Eat Eat - style.css (all pages) =====
+   Palette:
+   --sambal  : chili red (main accent)
+   --kunyit  : turmeric yellow (buttons, highlights)
+   --daun    : banana-leaf green (links, details)
+   --nasi    : warm white (page background)
+   --kopi    : dark coffee brown (text)
+*/
+/* ==========================================================
+   SHARED STYLES (used by ALL pages)
+   ========================================================== */
+:root {
+  --sambal: #c8102e;
+  --sambal-dark: #9c0c24;
+  --kunyit: #f2a900;
+  --daun: #2f6b3a;
+  --nasi: #fffdf8;
+  --kopi: #2b1d14;
+  --abu: #6b5f56;
+  --garis: #eadfd3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--kopi);
+  background: #f3e9dc;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bricolage Grotesque", "DM Sans", Arial, sans-serif;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--daun);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===== Layout ===== */
+#container {
+  width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--nasi);
+  box-shadow: 0 0 0 1px var(--garis);
+}
+
+/* ===== Header ===== */
+header {
+  background: var(--sambal);
+  color: #fff;
+  padding: 28px 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* ===== Nav ===== */
+nav {
+  display: flex;
+  background: var(--kopi);
+}
+
+nav a {
+  color: #f6e8d8;
+  text-decoration: none;
+  padding: 14px 24px;
+  font-weight: 500;
+  border-bottom: 4px solid transparent;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+nav a:hover {
+  background: #3d2b1f;
+  border-bottom-color: var(--kunyit);
+}
+
+nav a.active {
+  color: var(--kopi);
+  background: var(--kunyit);
+  border-bottom-color: var(--kunyit);
+  font-weight: 700;
+}
+
+nav a:focus-visible,
+.btn:focus-visible,
+.widget-box a:focus-visible {
+  outline: 3px solid var(--kunyit);
+  outline-offset: 2px;
+}
+
+/* ===== Hero ===== */
+#hero {
+  background: var(--kunyit);
+  color: var(--kopi);
+  padding: 56px 30px;
+  text-align: center;
+}
+
+#hero h1 {
+  margin: 0 0 12px;
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+#hero p {
+  max-width: 640px;
+  margin: 0 auto 26px;
+  font-size: 1.1rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
+}
+
+.btn-large {
+  background: var(--sambal);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 1.05rem;
+}
+
+.btn-large:hover {
+  background: var(--sambal-dark);
+  transform: translateY(-2px);
+}
+
+.btn-default {
+  background: transparent;
+  color: var(--daun);
+  border: 2px solid var(--daun);
+  padding: 6px 18px;
+  font-size: 0.9rem;
+}
+
+.btn-default:hover {
+  background: var(--daun);
+  color: #fff;
+}
+
+/* ===== Wrapper: main + sidebar ===== */
+#wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 36px 30px;
+}
+
+#main {
+  flex: 3;
+  min-width: 0;
+}
+
+#sidebar {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== Row of 3 boxes ===== */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  flex: 1;
+  text-align: center;
+  padding: 18px 12px 22px;
+  border: 1px solid var(--garis);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.box h3 {
+  margin: 14px 0 6px;
+  font-size: 1.15rem;
+}
+
+.box p {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  color: var(--abu);
+}
+
+.image-circle {
+  border-radius: 50%;
+  border: 4px solid var(--kunyit);
+}
+
+/* ===== Divider ===== */
+.divider {
+  border: 0;
+  border-top: 2px dashed var(--garis);
+  margin: 30px 0;
+}
+
+/* ===== Entries ===== */
+.entry {
+  overflow: hidden;
+}
+
+.entry h2 {
+  margin: 0 0 12px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--sambal);
+}
+
+.entry img {
+  float: left;
+  margin: 4px 20px 10px 0;
+  border-radius: 14px;
+}
+
+.entry img.right-img {
+  float: right;
+  margin: 4px 0 10px 20px;
+}
+
+.entry p {
+  margin: 0;
+}
+
+/* ===== Sidebar widgets ===== */
+.widget-box {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-top: 5px solid var(--daun);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.widget-box .title {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.widget-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.widget-box li {
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--garis);
+}
+
+.widget-box li:last-child {
+  border-bottom: 0;
+}
+
+.widget-box a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.widget-box a:hover {
+  color: var(--sambal);
+}
+
+.widget-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--abu);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--kopi);
+  color: #e9d9c6;
+  text-align: center;
+  padding: 20px 30px;
+  border-top: 5px solid var(--sambal);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================
+   PAGE: HOME (home.html)
+   Uses only the shared styles above.
+   ========================================================== */
+
+/* ==========================================================
+   PAGE: SPOTS (artikel.html)
+   ========================================================== */
+.page-spots .meta {
+  margin: 0 0 8px;
+}
+
+.page-spots .tag {
+  display: inline-block;
+  background: var(--sambal);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 999px;
+  margin-right: 6px;
+}
+
+.page-spots .tag-green {
+  background: var(--daun);
+}
+
+.page-spots .rating {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.page-spots .rating li {
+  background: #fff3d6;
+  border: 1px solid var(--kunyit);
+  border-radius: 8px;
+  padding: 2px 12px;
+  font-size: 0.9rem;
+}
+
+.page-spots .rating strong {
+  color: var(--sambal);
+}
+
+/* ==========================================================
+   PAGE: ABOUT (about.html)
+   ========================================================== */
+.page-about #hero {
+  background: var(--daun);
+  color: #fff;
+}
+
+.page-about .box h3 {
+  color: var(--sambal);
+}
+
+/* ==========================================================
+   PAGE: CONTACT (kontak.html)
+   ========================================================== */
+.page-contact #hero {
+  background: var(--sambal);
+  color: #fff;
+}
+
+.page-contact #hero .btn-large {
+  background: var(--kunyit);
+  color: var(--kopi);
+}
+
+.page-contact #hero .btn-large:hover {
+  background: #ffc933;
+}
+
+.page-contact .contact-form label {
+  display: block;
+  font-weight: 700;
+  margin: 14px 0 4px;
+}
+
+.page-contact .contact-form input,
+.page-contact .contact-form select,
+.page-contact .contact-form textarea {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border: 2px solid var(--garis);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--kopi);
+}
+
+.page-contact .contact-form input:focus,
+.page-contact .contact-form select:focus,
+.page-contact .contact-form textarea:focus {
+  outline: none;
+  border-color: var(--daun);
+}
+
+.page-contact .contact-form button {
+  margin-top: 18px;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ===== Small screens (desktop layout stays the same) ===== */
+@media (max-width: 760px) {
+  #wrapper,
+  .row {
+    flex-direction: column;
+  }
+  nav {
+    flex-wrap: wrap;
+  }
+  #hero h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+.page-contact #wrapper {
+  display: block;
+}
+
+.page-contact #main {
+  width: 100%;
+  max-width: 100%;
+  flex: none;
+}
+
+.page-contact .entry,
+.page-contact .contact-form,
+.page-contact .contact-form .row {
+  width: 100%;
+}
+
+.page-contact .contact-form .col {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.page-contact .contact-form .col-left {
+  flex: 1.4 1 0;
+}
